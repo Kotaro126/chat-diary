@@ -29,7 +29,7 @@
 
 | Column      | Type        | Options                        |
 | ----------- | ----------- | ------------------------------ |
-| word        | string      | null: false                    |
+| word_name   | string      | null: false                    |
 | example     | text        | null: false                    |
 | user        | references  | null: false, foreign_key: true |
 | diary       | references  | null: false, foreign_key: true |
