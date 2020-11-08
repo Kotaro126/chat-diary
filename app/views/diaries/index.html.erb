@@ -1,14 +1,22 @@
-<%= render "shared/header" %>
+<%= form_with(url: "#", local: true, class: "search-form") do |f| %>
+  <%= f.text_field :keyword, placeholder: "日記・英単語を検索する", class: "search-input" %>
+  <%= f.submit "検索", class: "search-btn" %>
+<% end %>
 
-
-
-
-
-<h1>トップページ表示します</h1>
-
-
-
-
-
-
-<%= render "shared/footer" %>
+<div class="contents row">
+  <% @diaries.each do |diary| %>
+    <li class="list">
+      <%= link_to diary_path(diary.id) do %>
+        <%= image_tag diary.image.variant(resize: '388x260'), class:'diary-image' if diary.image.attached? %>
+          <h2><%= diary.title %></h2>
+          <span class="name">
+            <a href="/users/<%= diary.user.id %>">
+              <span>投稿者</span><%= diary.user.nickname %>
+              <td><%= l diary.created_at, format: :default %></td>
+            </a>
+          </span>
+        </div>
+      <% end %>
+    </li>
+  <% end %>
+</div>
