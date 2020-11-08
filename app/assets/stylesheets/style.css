@@ -1071,3 +1071,21 @@ footer p {
   padding: 0;
   text-align: center;
 }
+.post-detail {
+  text-align: center;
+  margin-top: 50px;
+}
+.post-detail h1 {
+  font-family: nyt-cheltenham,georgia,'times new roman',times,serif;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  background: #f4f4f4;
+}
+.post-detail h2 {
+  padding: 1rem 2rem;
+  background: #f4f4f4;
+}
+.post-detail .name {
+  font-size: 10px;
+  background: gray;
+}

@@ -2,8 +2,6 @@ class UserPost
   include ActiveModel::Model
   attr_accessor :image, :title, :content, :word_name, :example, :user_id, :diary_id
 
-  has_one_attached :image
-
   with_options presence: true do
     validates :image, :title, :content, :word_name, :example
   end
