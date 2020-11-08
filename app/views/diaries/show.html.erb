@@ -1,0 +1,15 @@
+<div class="post-detail">
+  <%= image_tag @diary.image.variant(resize: '500x1500'), class:'diary-image' %>
+  <h1><%= @diary.title %></h1>
+  <h2><%= @diary.content %></h2>
+  <div class="name">
+    <h5>投稿者 <%= @diary.user.nickname %></h5>
+    <h5>投稿日時 <%= l @diary.created_at, format: :default %><h3>
+  </div>
+
+  <% if user_signed_in? && current_user.id == @diary.user_id %>
+    <%= link_to 'Edit', "#", method: :get, class: "post-edit" %>
+    <p class='or-text'>or</p>
+    <%= link_to 'Delete', "#", method: :delete, class:"post-destroy" %>
+  <% end %>
+</div>

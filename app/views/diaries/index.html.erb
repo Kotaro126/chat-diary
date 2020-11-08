@@ -1,6 +1,6 @@
 <%= form_with(url: "#", local: true, class: "search-form") do |f| %>
   <%= f.text_field :keyword, placeholder: "日記・英単語を検索する", class: "search-input" %>
-  <%= f.submit "検索", class: "search-btn" %>
+  <%= f.submit "Search", class: "search-btn" %>
 <% end %>
 
 <div class="contents row">
@@ -11,11 +11,10 @@
           <h2><%= diary.title %></h2>
           <span class="name">
             <a href="/users/<%= diary.user.id %>">
-              <span>投稿者</span><%= diary.user.nickname %>
               <td><%= l diary.created_at, format: :default %></td>
+              <span>By  </span><%= diary.user.nickname %>
             </a>
           </span>
-        </div>
       <% end %>
     </li>
   <% end %>
