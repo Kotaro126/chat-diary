@@ -9,6 +9,7 @@ Bundler.require(*Rails.groups)
 module ChatDiary
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
     config.load_defaults 6.0
     config.time_zone = 'Asia/Tokyo'
     config.i18n.default_locale = :ja

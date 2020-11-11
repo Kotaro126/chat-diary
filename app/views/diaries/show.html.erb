@@ -1,4 +1,5 @@
 <div class="post-detail">
+
   <%= image_tag @diary.image.variant(resize: '500x1500'), class:'diary-image' %>
   <h1><%= @diary.title %></h1>
   <h2><%= @diary.content %></h2>
@@ -7,9 +8,15 @@
     <h5>投稿日時 <%= l @diary.created_at, format: :default %><h3>
   </div>
 
+
+  <h1>英単語 <%= @word.word_name %></h1>
+  <h2>意味・使用例 <%= @word.example %></h2>
+
+
   <% if user_signed_in? && current_user.id == @diary.user_id %>
-    <%= link_to 'Edit', "#", method: :get, class: "post-edit" %>
+    <%= link_to '編集する', edit_diary_path(@diary.id), method: :get, class: "post-edit" %>
     <p class='or-text'>or</p>
-    <%= link_to 'Delete', "#", method: :delete, class:"post-destroy" %>
+    <%= link_to '削除する', diary_path(@diary.id), method: :delete, class:"post-destroy" %>
   <% end %>
+
 </div>
