@@ -1089,3 +1089,13 @@ footer p {
   font-size: 10px;
   background: gray;
 }
+.back-btn {
+  background-color:gray;
+  border-radius: 20px;
+  color: #fff;
+  border: 0;
+  font-size: 18px;
+  width: 50%;
+  margin: 5px 0 15px;
+  padding: 10px;
+}

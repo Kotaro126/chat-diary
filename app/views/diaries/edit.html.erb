@@ -1,0 +1,16 @@
+<div class="contents row">
+  <div class="container">
+    <h3>Edit Diary</h3>
+    <%= form_with(model: @diary, method: :patch, local: true) do |f| %>
+      <%= render 'shared/error_messages', model: f.object %>
+
+      <p>クリックしてファイルをアップロード</p>
+      <%= f.file_field :image,  placeholder: "Image" %>
+      <%= f.text_field :title, placeholder: "Title" %>
+      <%= f.text_area :content, placeholder: "Diary", rows: "8" %>
+      <%= f.submit "変更する", url: root_path, class:"change-btn" %>
+      <%= link_to 'もどる', root_path, class:"back-btn" %>
+    
+    <% end %>
+  </div>
+</div>
