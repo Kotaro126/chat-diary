@@ -656,7 +656,7 @@ body {
   letter-spacing: 0.15em;
   font-size: 16px;
   color: #666;
-  font-family: 'Unica One', "Avenir", "游ゴシック", "YuGothic", "ヒラギノ角ゴ Pro W6", "HIragino Kaku Gothic Pro W6", "HIragino Kaku Gothic Pro", Osaka, Meiryo, "メイリオ", "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
+  font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
   margin: 0;
 }
 
@@ -675,7 +675,7 @@ a:hover {
 
 .serif,
 div.contents.row div.content_post p {
-  font-family: 'ほのか明朝', serif;
+  font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 }
 
 .ultra {
@@ -705,13 +705,13 @@ form input[type="submit"] {
 
 .btn,
 header.header div.header__bar.row div.grid-6 a.post {
-  padding: 8px 20px;
+  padding: 8px 10px;
   font-size: 14px;
   border: 2px solid #57C3E9;
   color: #57C3E9;
   font-weight: bold;
   text-align: center;
-  border-radius: 3px;
+  border-radius: 5px;
   display: inline-block;
 }
 
@@ -767,7 +767,7 @@ header.header div.header__bar.row div.grid-6 {
 }
 
 header.header div.header__bar.row div.grid-6 a.post {
-  width: 120px;
+  width: 80px;
   display: inline-left;
   margin-left: 10px;
 }
@@ -783,7 +783,7 @@ header.header .user_nav span {
   display: block;
   float: left;
   margin-left: 30px;
-  width: 150px;
+  width: 190px;
   height: 50px;
   font-size: 1em;
   cursor: pointer;
@@ -987,22 +987,23 @@ form input,
 form textarea {
   width: 100%;
   margin: 5px 0 15px;
-  padding: 10px;
+  padding: 5px;
   border: 1px solid #D8D8D8;
   border-radius: 5px;
   font-family: "游ゴシック", "YuGothic";
 }
 
 form input[type="submit"] {
-  background-color: #57C3E9;
-  border-radius: 20px;
+  background-color: darkgrey;
+  border-radius: 10px;
   color: #fff;
   border: 0;
-  font-size: 18px;
+  font-size: 16px;
+  letter-spacing: .04em;
 }
 
 form input[type="submit"]:hover {
-  background-color: #84d3ef;
+  background-color: darkgray;
 }
 
 .container {
@@ -1020,20 +1021,6 @@ form input[type="submit"]:hover {
   font-size: 20px;
   color: #666;
 }
-
-.comments {
-  padding: 5px;
-  margin-top: 15px;
-}
-
-.comments a {
-  color: #57C3E9;
-}
-
-.comments a:hover {
-  text-decoration: underline;
-}
-
 footer {
   margin: 30px auto;
   padding: 10px;
@@ -1098,4 +1085,44 @@ footer p {
   width: 50%;
   margin: 5px 0 15px;
   padding: 10px;
+}
+.form-block {
+  position: relative;
+  padding: 10px;
+  margin: 0 0 20px 0;
+  background: #fff;
+  border: 1px #ccc solid;
+}
+
+.form-block .add {
+  position: absolute;
+  background-color:gray;
+  border-radius: 100%;
+  color: #fff;
+  display: inline-block;
+  font-size: 18px;
+  height: 18px;
+  width: 18px;
+  line-height: 17px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  cursor: pointer;
+}
+.form-block .close {
+  background-color: gray;
+  border-radius: 50%;
+  color: #fff;
+  display: inline-block;
+  font-size: 17px;
+  height: 18px;
+  width: 18px;
+  line-height: 17px;
+  text-align: center;
+  top: 0;
+  position: absolute;
+  right: 4px;
+  cursor: pointer;
 }

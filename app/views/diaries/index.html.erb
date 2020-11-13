@@ -1,6 +1,6 @@
 <%= form_with(url: search_diaries_path, local: true, method: :get, class: "search-form") do |f| %>
   <%= f.text_field :keyword, placeholder: "日記内容・英単語から検索する", class: "search-input" %>
-  <%= f.submit "Search", class: "search-btn" %>
+  <%= f.submit "search", class: "search-btn" %>
 <% end %>
 
 <div class="contents row">

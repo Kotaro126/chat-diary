@@ -1,0 +1,4 @@
+<% Word.where(diary_id: @diary.id).each do |word|%>
+    <h1>英単語 <%= word.word_name %></h1>
+    <h2>意味・使用例 <%= word.example %></h2>
+<% end %>

@@ -4,14 +4,19 @@
     <%= form_with(model: @user_post, url: diaries_path, method: :post, local: true) do |f| %>
       <%= render 'shared/error_messages', model: f.object %>
 
-      <p>クリックしてファイルをアップロード</p>
       <%= f.file_field :image, placeholder: "Image" %>
       <%= f.text_field :title, placeholder: "Title" %>
       <%= f.text_area :content, placeholder: "Diary", rows: "8" %>
       
-      <h2>Vocabulary</h2>
-      <%= f.text_field :word_name, placeholder: "Vocabulary" %>
-      <%= f.text_area :example, placeholder: "Example", rows: "5" %>
+      <h3>New Vocabulary</h3>
+      <div class="form-block" id="form_block[0]">
+        <span class="close" title="Close" style="display: none;">ー</span>
+        <%= f.text_field :word_name, id: 'word_name[0]',placeholder: "Vocabulary" %>
+        <%= f.text_area :example, id: 'example[0]',placeholder: "Example", rows: "5" %>
+        <div class="form-block" id="form_add">
+          <span class="add" title="Add">＋</span>
+        </div>
+      </div>
       <%= f.submit "SEND" %>
     <% end %>
   </div>
