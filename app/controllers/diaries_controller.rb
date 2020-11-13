@@ -22,6 +22,7 @@ class DiariesController < ApplicationController
   end
   
   def show
+    @words = Word.all
   end
 
   def edit
@@ -31,10 +32,10 @@ class DiariesController < ApplicationController
   def update
     diary = Diary.find(params[:id])
     diary_params = params.permit(:image, :title, :content, :user_id)
-    if diary.update!(diary_params)
-      redirect_to diary_path, notice: 'Book was successfully updated.'
+    if diary.update(diary_params)
+      redirect_to diary_path
     else
-      render :edit, notice: 'update was failed'
+      render :edit
     end
   end
 

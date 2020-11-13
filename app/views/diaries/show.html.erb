@@ -7,16 +7,15 @@
     <h5>投稿者 <%= @diary.user.nickname %></h5>
     <h5>投稿日時 <%= l @diary.created_at, format: :default %><h3>
   </div>
-
-
-  <h1>英単語 <%= @word.word_name %></h1>
-  <h2>意味・使用例 <%= @word.example %></h2>
-
+  
+  <div class="word__wrapper">
+    <%= render partial: "words/word", collection: Word.where(diary_id: @diary.id) %>
+  </div>
 
   <% if user_signed_in? && current_user.id == @diary.user_id %>
-    <%= link_to '編集する', edit_diary_path(@diary.id), method: :get, class: "post-edit" %>
+    <%= link_to '編集', edit_diary_path(@diary.id), method: :get, class: "post-edit" %>
     <p class='or-text'>or</p>
-    <%= link_to '削除する', diary_path(@diary.id), method: :delete, class:"post-destroy" %>
+    <%= link_to '削除', diary_path(@diary.id), method: :delete, class:"post-destroy" %>
   <% end %>
 
 </div>
